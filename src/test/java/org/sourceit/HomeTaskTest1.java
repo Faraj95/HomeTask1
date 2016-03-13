@@ -1,5 +1,6 @@
 package org.sourceit;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 
@@ -35,6 +36,11 @@ public class HomeTaskTest1 {
     public void testFindHypotenuseNegativeB() {
         Assert.assertEquals(HomeTask1.findHypotenuse(4, -1), 0D);
     }
+
+//    @DataProvider(name = "Name")
+//    public static Object[][] Name() {
+//
+//    }
 
     /**
      * Test on perimeter method
@@ -72,6 +78,21 @@ public class HomeTaskTest1 {
             boolean isInRange = generatedNumber >= -100 && generatedNumber <= 100;
             Assert.assertEquals(isInRange, true);
         }
+    }
+
+    @Test
+    public void testName() throws Exception {
+
+    }
+
+//    @Test
+//    public void testName() throws Exception {
+//
+//    }
+
+    @Override
+    public String toString() {
+        return "HomeTaskTest1{}";
     }
 
     @Test
