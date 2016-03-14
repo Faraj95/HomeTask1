@@ -69,13 +69,16 @@ public class HomeTask1 {
      * @return площадь треугольника.
      */
     public static double area(double a, double b) {
-        double s = (1 / 2 * (a * b));
-        {
-            System.out.println(s);
+        if (a > 0 && b > 0) {
+            double s = (0.5* (a * b));
+            {
+                System.out.println(s);
+            }
+            return s;
+        } else {
+            return 0;
         }
-        return s;
     }
-
     /**
      * Генерирует случайное число в заданных пределах.
      *
@@ -123,12 +126,12 @@ public class HomeTask1 {
      * @return элемент последовательности.
      */
     public static int fibonacci(int till) {
-        int[] a = new int[till];
+        int[] a = new int[till+1];
         int b = 0;
         a[0] = 0;
         a[1] = 1;
         for (int i = 2; i <= till; i++) {
-            a[i] = a[i - 2] + a[i--];
+            a[i] = a[i - 2] + a[i-1];
         }
         b = a[till];
         return b;
@@ -152,11 +155,11 @@ public class HomeTask1 {
 
         while (a != 0) {
             sumA = sumA + (a % 10);
-            sumA /= 10;
+            a /= 10;
         }
         while (b != 0) {
             sumB = sumB + (b % 10);
-            sumB /= 10;
+            b /= 10;
         }
         if (sumA == sumB) {
             return true;
